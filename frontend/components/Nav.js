@@ -1,14 +1,22 @@
 import Link from 'next/link';
+import NavStyles from './styles/NavStyles';
+import { FiShoppingCart } from 'react-icons/fi';
 
 const Nav = () => (
-  <div>
+  <NavStyles>
     <Link href="/activity">
-      <a>Activity</a>
+      <a>Activities</a>
     </Link>
-    <Link href="/">
-      <a>Home</a>
+    <Link href="/shoppingcart">
+      <a><FiShoppingCart /></a>
     </Link>
-  </div>
+    <Link href="/signin">
+      <a>Log In</a>
+    </Link>
+    <Link href="/signup">
+      <a>Sign Up</a>
+    </Link>
+  </NavStyles>
 )
 
 export default Nav;
