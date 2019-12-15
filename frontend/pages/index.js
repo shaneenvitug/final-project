@@ -1,7 +1,9 @@
-const Index = () => (
-  <div>
-    <p>Hello</p>
-  </div>
-)
+import Link from 'next/link';
 
-export default Index;
+const Home = props => (
+  <div>
+    <p>Home page coming soon!</p>
+  </div>
+);
+
+export default Home;
