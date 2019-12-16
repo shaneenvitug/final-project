@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/shaneenvitug-9930dd/jeepney/dev
-# timestamp: Mon Dec 16 2019 02:01:11 GMT+1100 (Australian Eastern Daylight Time)
+# timestamp: Mon Dec 16 2019 15:04:14 GMT+1100 (Australian Eastern Daylight Time)
 
 type Activity implements Node {
   id: ID!
@@ -8,8 +8,6 @@ type Activity implements Node {
   image: String
   largeImage: String
   price: Int!
-  createdAt: DateTime!
-  updatedAt: DateTime!
 }
 
 """A connection to a list of items."""
@@ -53,10 +51,6 @@ enum ActivityOrderByInput {
   largeImage_DESC
   price_ASC
   price_DESC
-  createdAt_ASC
-  createdAt_DESC
-  updatedAt_ASC
-  updatedAt_DESC
 }
 
 type ActivityPreviousValues {
@@ -66,8 +60,6 @@ type ActivityPreviousValues {
   image: String
   largeImage: String
   price: Int!
-  createdAt: DateTime!
-  updatedAt: DateTime!
 }
 
 type ActivitySubscriptionPayload {
@@ -354,50 +346,6 @@ input ActivityWhereInput {
 
   """All values greater than or equal the given value."""
   price_gte: Int
-  createdAt: DateTime
-
-  """All values that are not equal to given value."""
-  createdAt_not: DateTime
-
-  """All values that are contained in given list."""
-  createdAt_in: [DateTime!]
-
-  """All values that are not contained in given list."""
-  createdAt_not_in: [DateTime!]
-
-  """All values less than the given value."""
-  createdAt_lt: DateTime
-
-  """All values less than or equal the given value."""
-  createdAt_lte: DateTime
-
-  """All values greater than the given value."""
-  createdAt_gt: DateTime
-
-  """All values greater than or equal the given value."""
-  createdAt_gte: DateTime
-  updatedAt: DateTime
-
-  """All values that are not equal to given value."""
-  updatedAt_not: DateTime
-
-  """All values that are contained in given list."""
-  updatedAt_in: [DateTime!]
-
-  """All values that are not contained in given list."""
-  updatedAt_not_in: [DateTime!]
-
-  """All values less than the given value."""
-  updatedAt_lt: DateTime
-
-  """All values less than or equal the given value."""
-  updatedAt_lte: DateTime
-
-  """All values greater than the given value."""
-  updatedAt_gt: DateTime
-
-  """All values greater than or equal the given value."""
-  updatedAt_gte: DateTime
 }
 
 input ActivityWhereUniqueInput {
@@ -416,8 +364,6 @@ type BatchPayload {
   """The number of nodes that have been affected by the Batch operation."""
   count: Long!
 }
-
-scalar DateTime
 
 """
 The `Long` scalar type represents non-fractional signed whole numeric values.

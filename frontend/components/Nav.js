@@ -4,7 +4,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 
 const Nav = () => (
   <NavStyles>
-    <Link href="/activity">
+    <Link href="/activities">
       <a>Activities</a>
     </Link>
     <Link href="/shoppingcart">

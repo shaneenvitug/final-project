@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Activities from '../components/Activities';
 
 const Home = props => (
   <div>
-    <p>Home page coming soon!</p>
+    <Activities />
   </div>
 );
 
