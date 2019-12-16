@@ -1,6 +1,8 @@
+import CreateActivity from '../components/CreateActivity';
+
 const Sell = props => (
   <div>
-    <p>All activities insert here by admin</p>
+  <CreateActivity />
   </div>
 )
 

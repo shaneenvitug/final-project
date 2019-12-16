@@ -47,3 +47,4 @@ class Activities extends Component {
 }
 
 export default Activities;
+export { ALL_ACTIVITIES_QUERY };
