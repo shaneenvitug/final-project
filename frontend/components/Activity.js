@@ -5,6 +5,7 @@ import Title from './styles/Title';
 import ActivityStyles from './styles/ActivityStyles';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
+import DeleteActivity from './DeleteActivity';
 
 export default class Activity extends Component {
   static propTypes = {
@@ -35,7 +36,7 @@ export default class Activity extends Component {
             <a>Edit</a>
           </Link>
           <button>Add To Cart</button>
-          <button>Delete</button>
+          <DeleteActivity id={activity.id}>Delete This Activity</DeleteActivity>
         </div>
       </ActivityStyles>
     )

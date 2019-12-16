@@ -84,7 +84,7 @@ class UpdateActivity extends Component {
                     Description
                     <textarea id="description" name="description" placeholder="Enter a description" required defaultValue={data.activity.description} onChange={this.handleChange}/>
                   </label>
-                  <button type="submit">Save Changes</button>
+                  <button type="submit">Sav{loading ? 'ing' : 'e'} Changes</button>
                 </fieldset>
               </Form>
             )}

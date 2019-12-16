@@ -15,14 +15,20 @@ const Mutation = {
     // remove the ID from the updates
     delete updates.id;
     // run the update method
-    return ctx.db.mutation.updateActivity({
-      data: updates,
-      where: {
-        id: args.id,
+    return ctx.db.mutation.updateActivity(
+      {
+        data: updates,
+        where: {
+          id: args.id,
+        },
       },
-    },
-    info
+      info
     )
+  },
+  async deleteActivity(parent, args, ctx, info) {
+    const where = { id: args.id }
+    const activity = await ctx.db.query.activity({ where }, `{ id title }`);
+    return ctx.db.mutation.deleteActivity({ where }, info);
   }
 }
 
