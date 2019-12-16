@@ -14,21 +14,25 @@ const Form = styled.form`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
   background: rgba(0, 0, 0, 0.02);
   border: 5px solid white;
-  padding: 20px;
-  font-size: 1.5rem;
+  padding: 3rem 4rem;
+  font-size: 1.6rem;
   line-height: 1.5;
   font-weight: 600;
+  max-width: 760px;
+  margin: 0 auto;
   label {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    color: ${props => props.theme.red};
   }
   input,
   textarea,
   select {
     width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid black;
+    padding: 0.8rem;
+    font-size: 1.5rem;
+    border: 1px solid ${props => props.theme.blue};
     &:focus {
       outline: 0;
       border-color: ${props => props.theme.red};
@@ -36,13 +40,14 @@ const Form = styled.form`
   }
   button,
   input[type='submit'] {
-    width: auto;
+    width: 100%;
     background: ${props => props.theme.red};;
     color: white;
     border: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    padding: 0.5rem 1.2rem;
+    padding: 1rem;
+    cursor: pointer;
   }
   fieldset {
     border: 0;
@@ -52,14 +57,26 @@ const Form = styled.form`
       opacity: 0.5;
     }
     &::before {
-      height: 10px;
+      height: 0.5rem;
       content: '';
       display: block;
-      background-image: linear-gradient(to right, ${props => props.theme.green} 0%, ${props => props.theme.yellow} 50%, ${props => props.theme.green} 100%);
+      background-image: linear-gradient(90deg, rgba(255,95,109,1) 25%, rgba(255,195,113,1) 71%);
     }
     &[aria-busy='true']::before {
       background-size: 50% auto;
       animation: ${loading} 0.5s linear infinite;
+    }
+  }
+  .login {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    button {
+      width: auto;
+      background: rgba(0, 0, 0, 0.02);
+      padding: 0.2rem 1rem;
+      border: 1px solid ${props => props.theme.black};
+      font-weight: normal;
     }
   }
 `;
