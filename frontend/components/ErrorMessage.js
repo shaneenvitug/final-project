@@ -4,14 +4,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ErrorStyles = styled.div`
-  padding: 2rem;
+  padding: 1rem;
   background: white;
   margin: 2rem 0;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-left: 5px solid red;
+  border: 1px solid ${props => props.theme.grey};
+  border-left: 3px solid ${props => props.theme.yellow};
   p {
     margin: 0;
     font-weight: 100;
+    text-align: center;
+    color: ${props => props.theme.orange}
   }
   strong {
     margin-right: 1rem;
@@ -33,7 +35,6 @@ const DisplayError = ({ error }) => {
   return (
     <ErrorStyles>
       <p data-test="graphql-error">
-        <strong>Error</strong>
         {error.message.replace('GraphQL error: ', '')}
       </p>
     </ErrorStyles>

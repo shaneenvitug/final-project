@@ -6,9 +6,9 @@ import Form from './styles/Form';
 import Error from './ErrorMessage';
 import { CURRENT_USER_QUERY } from './User';
 
-const SIGNUP_MUTATION = gql`
-  mutation SIGNUP_MUTATION($email: String!, $name: String!, $password: String!) {
-    signup(email: $email, name: $name, password: $password) {
+const LOGIN_MUTATION = gql`
+  mutation LOGIN_MUTATION($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
       id
       email
       name
@@ -16,7 +16,7 @@ const SIGNUP_MUTATION = gql`
   }
 `;
 
-class Signup extends Component {
+class Login extends Component {
   state = {
     name: '',
     password: '',
@@ -27,30 +27,19 @@ class Signup extends Component {
   };
   render() {
     return (
-      <Mutation mutation={SIGNUP_MUTATION} variables={this.state} refetchQueries={[{ query: CURRENT_USER_QUERY }]}>
-        {(signup, { error, loading }) => (
+      <Mutation mutation={LOGIN_MUTATION} variables={this.state} refetchQueries={[ { query: CURRENT_USER_QUERY } ]}>
+        {(login, { error, loading }) => (
           <Form
             method="post"
             onSubmit={async e => {
               e.preventDefault();
-              await signup();
+              await login();
               this.setState({ name: '', email: '', password: '' });
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
-              <h2>Sign Up</h2>
+              <h2>Log In</h2>
               <Error error={error} />
-              <label htmlFor="name">
-              Full Name
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={this.state.name}
-                onChange={this.saveToState}
-                />
-              </label>
-
               <label htmlFor="email">
                 Email address
                 <input
@@ -72,13 +61,13 @@ class Signup extends Component {
                 />
               </label>
 
-              <button type="submit">Sign Up</button>
+              <button type="submit">Log In</button>
             </fieldset>
-            <div className="login">
-              <p>Already have a Jeepney account?</p>
+            <div className="signup">
+              <p>No account yet? Sign up now!</p>
               <button>
-                <Link href="/login">
-                  <a>Log In</a>
+                <Link href="/signup">
+                  <a>Sign Up</a>
                 </Link>
               </button>
             </div>
@@ -89,4 +78,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default Login;

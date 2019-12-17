@@ -12,13 +12,12 @@ const NavStyles = styled.ul`
     display: flex;
     align-items: center;
     position: relative;
-    font-weight: 900;
     font-size: 1em;
+    font-family: 'Segoe UI';
     background: none;
     border: 0;
     cursor: pointer;
     color: ${props => props.theme.black};
-    font-weight: 800;
     @media (max-width: 700px) {
       font-size: 10px;
       padding: 0 10px;

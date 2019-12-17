@@ -67,10 +67,11 @@ const Form = styled.form`
       animation: ${loading} 0.5s linear infinite;
     }
   }
-  .login {
+  .login, .signup {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: 2rem;
     button {
       width: auto;
       background: rgba(0, 0, 0, 0.02);

@@ -1,5 +1,9 @@
 # import * from './generated/prisma.graphql'
 
+type SuccessMessage {
+	message: String
+}
+
 type Mutation {
 	createActivity(
 		title: String
@@ -11,9 +15,12 @@ type Mutation {
 	updateActivity(id: ID!, title: String, description: String, price: Int): Activity!
 	deleteActivity(id: ID!): Activity
 	signup(email: String!, password: String!, name: String!): User!
+	login(email: String!, password: String!): User!
+	signout: SuccessMessage
 }
 
 type Query {
 	activities: [Activity]!
 	activity(where: ActivityWhereUniqueInput!): Activity
+	me: User
 }
