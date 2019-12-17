@@ -24,4 +24,5 @@ type Activity {
   image: String
   largeImage: String
   price: Int!
+  user: User!
 }

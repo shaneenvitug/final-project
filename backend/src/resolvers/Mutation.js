@@ -6,9 +6,18 @@ const { transport, makeANiceEmail } = require('../mail');
 
 const Mutation = {
   async createActivity(parent, args, ctx, info) {
+    if (!ctx.request.userId) {
+      throw new Error('You must be logged in to do that!');
+    }
 
     const activity = await ctx.db.mutation.createActivity({
       data: {
+        // this is how to create a relationship between the activity and the user
+        user: {
+          connect: {
+            id: ctx.request.userId,
+          }
+        },
         ...args
       }
     }, info)
