@@ -60,7 +60,9 @@ class Login extends Component {
                   onChange={this.saveToState}
                 />
               </label>
-
+              <Link href="/forgotpwd">
+                <a><p className="password">Forgot password?</p></a>
+              </Link>
               <button type="submit">Log In</button>
             </fieldset>
             <div className="signup">

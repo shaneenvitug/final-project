@@ -67,6 +67,15 @@ const Form = styled.form`
       animation: ${loading} 0.5s linear infinite;
     }
   }
+  p.email {
+    text-align: justify;
+    color: ${props => props.theme.black};
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+  }
+  p.password {
+    text-align: right;
+  }
   .login, .signup {
     display: flex;
     align-items: center;

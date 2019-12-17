@@ -1,9 +1,9 @@
 import UpdateActivity from '../components/UpdateActivity';
 
-const Sell = props => (
+const UpdatePage = props => (
   <div>
   <UpdateActivity id={props.query.id} />
   </div>
 )
 
-export default Sell;
+export default UpdatePage;
