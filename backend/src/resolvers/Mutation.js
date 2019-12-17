@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { randomBytes } = require('crypto'); // built in module to node to generate random reset token
 const { promisify } = require('util'); // also built in library - take cb functions and turn them into promise based functions
+const { transport, makeANiceEmail } = require('../mail');
 
 const Mutation = {
   async createActivity(parent, args, ctx, info) {
@@ -97,8 +98,18 @@ const Mutation = {
       where: { email: args.email },
       data: { resetToken, resetTokenExpiry },
     });
-    return { message: 'Thanks!' };
     // 3. Email them that reset token
+    const mailRes = await transport.sendMail({
+      from: 'support@jeepney.com',
+      to: user.email,
+      subject: 'Jeepney Reset Password Notification',
+      html: makeANiceEmail(`Looks like you've forgotten your Jeepney password. Not to worry, just follow this link to create a new password:
+      \n\n
+      <a href="${process.env
+        .FRONTEND_URL}/reset?resetToken=${resetToken}">Password Reset</a>`),
+    });
+    // 4. Return the message
+    return { message: 'Thanks!' };
   },
   async resetPassword(parent, args, ctx, info) {
     // 1. check if the passwords match
