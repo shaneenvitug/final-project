@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const { randomBytes } = require('crypto'); // built in module to node to generate random reset token
 const { promisify } = require('util'); // also built in library - take cb functions and turn them into promise based functions
 const { transport, makeANiceEmail } = require('../mail');
+const stripe = require('../stripe');
 
 const Mutation = {
   async createActivity(parent, args, ctx, info) {
@@ -219,6 +220,39 @@ const Mutation = {
       },
       info
     );
+  },
+  async createOrder(parent, args, ctx, info) {
+    // 1. Query the current user and make sure they are signed in
+    const { userId } = ctx.request;
+    if (!userId) throw new Error('You must be signed in to complete this order.');
+    const user = await ctx.db.query.user(
+      { where: { id: userId } },
+      `{
+      id
+      name
+      email
+      cart {
+        id
+        quantity
+        activity { title price id description image }
+      }}`
+    );
+    // 2. recalculate the total for the price
+    const amount = user.cart.reduce(
+      (tally, cartItem) => tally + cartItem.activity.price * cartItem.quantity,
+      0
+    );
+    console.log(`Going to charge for a total of ${amount}`);
+    // 3. Create the stripe charge (turn token into $$$)
+    const charge = await stripe.charges.create({
+      amount,
+      currency: 'AUD',
+      source: args.token,
+    });
+    // 4. Convert the CartItems to OrderItems
+    // 5. create the Order
+    // 6. Clean up - clear the users cart, delete cartItems
+    // 7. Return the Order to the client
   },
 };
 
