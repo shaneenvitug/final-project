@@ -5,6 +5,7 @@ import NavStyles from './styles/NavStyles';
 import { FiShoppingCart } from 'react-icons/fi';
 import User from './User';
 import Signout from './Signout';
+import CartCount from './CartCount';
 
 const Nav = () => (
   <User>
@@ -19,7 +20,7 @@ const Nav = () => (
             <>
               <Mutation mutation={TOGGLE_CART_MUTATION}>
                 {(toggleCart) => (
-              <button onClick={toggleCart}><FiShoppingCart /></button>
+              <button onClick={toggleCart}><FiShoppingCart /><CartCount count={me.cart.reduce((tally, cartItem) => tally + cartItem.quantity, 0)}></CartCount></button>
                 )}
               </Mutation>
               <Link href="/me">

@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/shaneenvitug-9930dd/jeepney/dev
-# timestamp: Wed Dec 18 2019 15:06:47 GMT+1100 (Australian Eastern Daylight Time)
+# timestamp: Wed Dec 18 2019 23:29:02 GMT+1100 (Australian Eastern Daylight Time)
 
 type Activity implements Node {
   id: ID!
@@ -132,9 +132,11 @@ input ActivityUpdateManyMutationInput {
   price: Int
 }
 
-input ActivityUpdateOneRequiredInput {
+input ActivityUpdateOneInput {
   create: ActivityCreateInput
   connect: ActivityWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
   update: ActivityUpdateDataInput
   upsert: ActivityUpsertNestedInput
 }
@@ -402,7 +404,7 @@ type BatchPayload {
 type CartItem implements Node {
   id: ID!
   quantity: Int!
-  activity: Activity!
+  activity: Activity
   user: User!
 }
 
@@ -419,7 +421,7 @@ type CartItemConnection {
 input CartItemCreateInput {
   id: ID
   quantity: Int
-  activity: ActivityCreateOneInput!
+  activity: ActivityCreateOneInput
   user: UserCreateOneWithoutCartInput!
 }
 
@@ -431,7 +433,7 @@ input CartItemCreateManyWithoutUserInput {
 input CartItemCreateWithoutUserInput {
   id: ID
   quantity: Int
-  activity: ActivityCreateOneInput!
+  activity: ActivityCreateOneInput
 }
 
 """An edge in a connection."""
@@ -567,7 +569,7 @@ input CartItemSubscriptionWhereInput {
 
 input CartItemUpdateInput {
   quantity: Int
-  activity: ActivityUpdateOneRequiredInput
+  activity: ActivityUpdateOneInput
   user: UserUpdateOneRequiredWithoutCartInput
 }
 
@@ -598,7 +600,7 @@ input CartItemUpdateManyWithWhereNestedInput {
 
 input CartItemUpdateWithoutUserDataInput {
   quantity: Int
-  activity: ActivityUpdateOneRequiredInput
+  activity: ActivityUpdateOneInput
 }
 
 input CartItemUpdateWithWhereUniqueWithoutUserInput {
