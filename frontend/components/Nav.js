@@ -23,8 +23,8 @@ const Nav = () => (
               <button onClick={toggleCart}><FiShoppingCart /><CartCount count={me.cart.reduce((tally, cartItem) => tally + cartItem.quantity, 0)}></CartCount></button>
                 )}
               </Mutation>
-              <Link href="/me">
-                <a>Account</a>
+              <Link href="/orders">
+                <a>Orders</a>
               </Link>
               <Signout />
             </>
