@@ -49,15 +49,14 @@ const TOGGLE_CART_MUTATION = gql`
 
 const Cart = () => (
   <User>
-    {({ data }) => {
-      const me = data ? data.me : null
+    {({ data: { me } }) => {
+      if (!me) return null;
+      console.log(me);
       return (
         <Mutation mutation={TOGGLE_CART_MUTATION}>
           {toggleCart => (
             <Query query={LOCAL_STATE_QUERY}>
-              {({ data }) => {
-                const me = data ? data.me : null
-                return (
+              {({ data }) => (
                 <CartStyles open={data.cartOpen}>
                   <header>
                     <CloseButton onClick={toggleCart} title="close">
@@ -74,7 +73,7 @@ const Cart = () => (
                     <ButtonStyle>Pay Now</ButtonStyle>
                   </footer>
                 </CartStyles>
-              )}}
+              )}
             </Query>
           )}
         </Mutation>

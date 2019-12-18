@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import formatMoney from '../lib/formatMoney';
+import RemoveFromCart from './RemoveFromCart';
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
@@ -20,22 +21,24 @@ const CartItemStyles = styled.li`
 
 const CartItem = ({ cartItem }) => (
   <CartItemStyles>
-    <img width="100" src={cartItem.item.image} alt={cartItem.item.title} />
+  <img width="100" src={cartItem.activity.image} alt={cartItem.activity.title} />
     <div className="cart-item-details">
-      <h3>{cartItem.item.title}</h3>
+      <h3>{cartItem.activity.title}</h3>
       <p>
-        {formatMoney(cartItem.item.price * cartItem.quantity)}
+        {formatMoney(cartItem.activity.price * cartItem.quantity)}
         {' - '}
         <em>
-          {cartItem.quantity} &times; {formatMoney(cartItem.item.price)} each
+          {cartItem.quantity} &times; {formatMoney(cartItem.activity.price)} each
         </em>
       </p>
     </div>
+    <RemoveFromCart id={cartItem.id} />
   </CartItemStyles>
 );
 
 CartItem.propTypes = {
   cartItem: PropTypes.object.isRequired,
 };
+
 
 export default CartItem;
