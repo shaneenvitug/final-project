@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 import Header from './Header';
 import Meta from './Meta';
 
@@ -25,7 +25,7 @@ const Inner = styled.div`
   padding: 2rem;
 `;
 
-const GlobalStyle = createGlobalStyle`
+injectGlobal`
 @font-face {
   font-family: 'segoe_ui';
   src: url('/public/Segoe UI.woff')
@@ -57,7 +57,6 @@ class Page extends Component {
   render() {
     return (
         <ThemeProvider theme={theme}>
-        <GlobalStyle />
           <StyledPage>
             <Meta />
             <Header />
