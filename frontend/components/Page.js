@@ -28,7 +28,7 @@ const Inner = styled.div`
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'segoe_ui';
-  src: url('/static/Segoe UI.woff')
+  src: url('/public/Segoe UI.woff')
   format('woff');
   font-weight: normal;
   font-style: normal;

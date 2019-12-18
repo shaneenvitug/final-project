@@ -1,8 +1,11 @@
 import CreateActivity from '../components/CreateActivity';
+import PleaseSignIn from '../components/PleaseSignIn';
 
 const Sell = props => (
   <div>
-  <CreateActivity />
+    <PleaseSignIn>
+      <CreateActivity />
+    </PleaseSignIn>
   </div>
 )
 

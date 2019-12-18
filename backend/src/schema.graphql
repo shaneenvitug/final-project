@@ -25,6 +25,7 @@ type Query {
 	activities: [Activity]!
 	activity(where: ActivityWhereUniqueInput!): Activity
 	me: User
+	users: [User]!
 }
 
 type User {
