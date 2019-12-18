@@ -45,11 +45,6 @@ const StyledHeader = styled.header`
       justify-content: center;
     }
   }
-  .sub-bar {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    border-bottom: 0.1rem solid ${props => props.theme.grey};
-  }
 `;
 
 const Header = () => (
@@ -61,9 +56,6 @@ const Header = () => (
         </Link>
       </Logo>
       <Nav />
-    </div>
-    <div className="sub-bar">
-      <p>Search</p>
     </div>
     <Cart />
   </StyledHeader>

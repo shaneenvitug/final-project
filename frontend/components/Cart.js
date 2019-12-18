@@ -8,6 +8,7 @@ import User from './User';
 import CartItem from './CartItem';
 import calcTotalPrice from '../lib/calcTotalPrice';
 import formatMoney from '../lib/formatMoney';
+import TakeMyMoney from './TakeMyMoney';
 
 const Title = styled.h3`
   color: ${props => props.theme.red};
@@ -74,7 +75,7 @@ const Cart = () => (
           </ul>
           <footer>
             <p>{formatMoney(calcTotalPrice(me.cart))}</p>
-            <ButtonStyle>Pay Now</ButtonStyle>
+            <TakeMyMoney><ButtonStyle>Pay Now</ButtonStyle></TakeMyMoney>
           </footer>
         </CartStyles>
       );
