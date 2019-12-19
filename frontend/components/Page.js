@@ -11,7 +11,7 @@ const theme = {
   blue: '#84A1E2',
   black: '#424242',
   grey: '#E9E9E9',
-  maxWidth: '1000px',
+  maxWidth: '1200px',
 }
 
 const StyledPage = styled.div`
@@ -28,7 +28,7 @@ const Inner = styled.div`
 injectGlobal`
 @font-face {
   font-family: 'segoe_ui';
-  src: url('/public/Segoe UI.woff')
+  src: url('/static/Segoe UI.woff')
   format('woff');
   font-weight: normal;
   font-style: normal;

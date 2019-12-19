@@ -13,7 +13,6 @@ const NavStyles = styled.ul`
     align-items: center;
     position: relative;
     font-size: 1em;
-    font-family: 'Segoe UI';
     background: none;
     border: 0;
     cursor: pointer;

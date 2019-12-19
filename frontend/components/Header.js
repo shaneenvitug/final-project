@@ -17,8 +17,8 @@ Router.onRouteChangeError = () => {
 }
 
 const Logo = styled.h1`
-  font-size: 2rem;
-  margin-left: 0.5rem;
+  font-size: 2.5rem;
+  margin-left: 1.5rem;
   position: relative;
   z-index: 2;
   a {
@@ -35,7 +35,7 @@ const Logo = styled.h1`
 
 const StyledHeader = styled.header`
   .bar {
-    border-bottom: 0.3rem solid ${props => props.theme.grey};
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
