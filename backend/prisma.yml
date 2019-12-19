@@ -1,6 +1,7 @@
 #endpoint: ${env:PRISMA_ENDPOINT}
 #endpoint: https://jeepney-90027b4efe.herokuapp.com/jeepney/1
-endpoint: https://jeepney-90027b4efe.herokuapp.com/shaneenvitug-jeepney/sv
+#endpoint: https://jeepney-90027b4efe.herokuapp.com/shaneenvitug-jeepney/sv
+endpoint: https://jeepney-90027b4efe.herokuapp.com/shaneen-vitug-jeepny/prod
 datamodel: datamodel.prisma
 # secret: ${env:PRISMA_SECRET}
 hooks:
