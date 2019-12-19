@@ -6,12 +6,13 @@ import Meta from './Meta';
 const theme = {
   orange: '#FA9246',
   yellow: '#FF9B20',
-  red: '#F34711',
+  red: '#FF5722',
   green: '#009688',
   blue: '#84A1E2',
   black: '#424242',
   grey: '#E9E9E9',
   maxWidth: '1200px',
+  bs: '1px 1px 1px rgba(0, 0, 0, 0.2)'
 }
 
 const StyledPage = styled.div`

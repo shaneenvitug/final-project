@@ -48,6 +48,7 @@ class Login extends Component {
                   placeholder="email@johndoe.com"
                   value={this.state.email}
                   onChange={this.saveToState}
+                  autoFocus
                 />
               </label>
               <label htmlFor="password">

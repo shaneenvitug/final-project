@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link'
-import Title from './styles/Title';
 import ActivityStyles from './styles/ActivityStyles';
 import PriceTag from './styles/PriceTag';
+import Title from './styles/Title';
 import formatMoney from '../lib/formatMoney';
 import DeleteActivity from './DeleteActivity';
 import AddToCart from './AddToCart';
+import User from './User';
 
 
 export default class Activity extends Component {
@@ -19,26 +20,17 @@ export default class Activity extends Component {
     return (
       <ActivityStyles>
         {activity.image && <img src={activity.image} alt={activity.title} />}
-        <Title>
-          <Link href={{
-            pathname: '/activity',
-            query: { id: activity.id }
-          }}>
-            <a>{activity.title}</a>
-          </Link>
-        </Title>
-        <PriceTag>{formatMoney(activity.price)}</PriceTag>
-        <p>{activity.description}</p>
-
-        <div className="buttonList">
-          <Link href={{
-            pathname: 'update',
-            query: { id: activity.id },
-          }}>
-            <a>Edit</a>
-          </Link>
-          <AddToCart id={activity.id} />
-          <DeleteActivity id={activity.id}>Delete This Activity</DeleteActivity>
+        <div className="container">
+          <Title>
+            <Link href={{
+              pathname: '/activity',
+              query: { id: activity.id }
+            }}>
+              <a>{activity.title}</a>
+            </Link>
+          </Title>
+          <PriceTag>{formatMoney(activity.price)}</PriceTag>
+          <p>{activity.description}</p>
         </div>
       </ActivityStyles>
     )

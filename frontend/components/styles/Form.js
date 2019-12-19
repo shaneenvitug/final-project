@@ -26,6 +26,9 @@ const Form = styled.form`
     margin-top: 1.5rem;
     color: ${props => props.theme.red};
   }
+  a {
+    color: black;
+  }
   input,
   textarea,
   select {
@@ -48,6 +51,9 @@ const Form = styled.form`
     font-weight: 600;
     padding: 1rem;
     cursor: pointer;
+    a {
+      color: black;
+    }
   }
   fieldset {
     border: 0;

@@ -63,7 +63,7 @@ class Order extends React.Component {
                 <span>{formatMoney(order.total)}</span>
               </p>
               <p>
-                <span>Item Count</span>
+                <span>Quantity</span>
                 <span>{order.items.length}</span>
               </p>
               <div className="items">

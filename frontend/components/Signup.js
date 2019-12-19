@@ -35,6 +35,9 @@ class Signup extends Component {
               e.preventDefault();
               await signup();
               this.setState({ name: '', email: '', password: '' });
+              Router.push({
+                pathname: '/',
+              });
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
@@ -48,6 +51,7 @@ class Signup extends Component {
                 placeholder="Your Name"
                 value={this.state.name}
                 onChange={this.saveToState}
+                autoFocus
                 />
               </label>
 
