@@ -2,7 +2,7 @@
 #endpoint: https://jeepney-90027b4efe.herokuapp.com/jeepney/1
 endpoint: https://jeepney-90027b4efe.herokuapp.com/shaneenvitug-jeepney/sv
 datamodel: datamodel.prisma
-secret: ${env:PRISMA_SECRET}
+# secret: ${env:PRISMA_SECRET}
 hooks:
   post-deploy:
     - graphql get-schema -p prisma
