@@ -20,6 +20,7 @@ export default class Activity extends Component {
     return (
       <ActivityStyles>
         {activity.image && <img src={activity.image} alt={activity.title} />}
+        
         <div className="container">
           <Title>
             <Link href={{
