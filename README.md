@@ -23,8 +23,8 @@ This was developed as part of SEI 34 for my final project, the goal was to build
 
 ## Tech Stack
 
-**Languages:** HTML, CSS, Javascript, GraphQL  
-**Frameworks/Libraries:** React, Next.js, Node.js/Express, Apollo Client
+**Languages:** HTML, CSS, Javascript
+**Frameworks/Libraries:** React, Next.js, Node.js/Express, Apollo Client, GraphQL
 **Back-end:** GraphQL Yoga, Prisma
 **Front-end Hosting:** Now  
 **Other:** Styled Components, Stripe, Cloudinary
