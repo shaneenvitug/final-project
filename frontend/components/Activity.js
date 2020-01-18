@@ -27,7 +27,7 @@ export default class Activity extends Component {
               pathname: '/activity',
               query: { id: activity.id }
             }}>
-              <a>{activity.title}</a>
+              <a target="_blank">{activity.title}</a>
             </Link>
           </Title>
           <PriceTag>{formatMoney(activity.price)}</PriceTag>
