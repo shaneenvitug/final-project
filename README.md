@@ -37,7 +37,7 @@ This was developed as part of SEI 34 for my final project, the goal was to build
 4. `npm install` to both
 5. `npm run dev` on both to run the app
 
-You can see the site [here](). //TODO: deploy app
+You can see the site [here](https://jeepney-next.herokuapp.com/).
 
 ## Code Examples
 
@@ -59,6 +59,7 @@ To-do list:
 - [ ] Search functionality
 - [ ] Fix sending email when user forgets password
 - [ ] Testing
+- [ ] Fix deployed version, some feature don't work. Can only view activities.
 
 ## Status
 
